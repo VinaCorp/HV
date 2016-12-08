@@ -1,0 +1,4 @@
+site_name: vhospital-api
+site_description: REST API for Virtual Hospital Medic Calendar
+repo_url: https://github.com/ramiroluz/vhospital-drf
+site_dir: html
