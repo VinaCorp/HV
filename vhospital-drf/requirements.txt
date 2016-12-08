@@ -1,6 +1,8 @@
 # Minimum Django and REST framework version
 Django>=1.6
 djangorestframework>=2.4.3
+django-filter
+markdown
 
 # Test requirements
 pytest-django==2.6

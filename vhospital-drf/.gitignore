@@ -18,5 +18,7 @@ local/
 
 .env
 
+*.sqlite3
+
 !.gitignore
 !.travis.yml
