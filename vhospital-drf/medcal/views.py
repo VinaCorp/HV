@@ -1,6 +1,7 @@
 from rest_framework.response import Response
 from rest_framework import viewsets
 from rest_framework.response import Response
+from rest_framework.decorators import list_route
 
 
 class MedicViewSet(viewsets.ViewSet):
@@ -67,3 +68,41 @@ class SpecialtyViewSet(viewsets.ViewSet):
         /apiv0/specialty/1
         '''
         return Response({"cod":"E00001", "nome":"Cardiologia"})
+
+
+class ScheduleViewSet(viewsets.ViewSet):
+    """
+    A simple ViewSet for listing or retrieving schedules of medics.
+    """
+
+    def list(self, request):
+        '''
+        /apiv0/schedule-search/?q=Cardiologia
+        '''
+        specialty = request.query_params.get('q', None)
+        if specialty is not None:
+            return Response({
+                "IdSessao":"",
+                "IDRetorno":"",
+                "MensagemDeRetorno":"",
+                "IdEntidade":"",
+                "prestador": [
+                    {
+                        "codigo":"",
+                        "nome prestador":"",
+                        "código da Clínica":"",
+                        "nome da clinica":"",
+                        "foto":" url",
+                        "avaliação":"",
+                        "endereço":"",
+                        "agendaDisponível": [{"data": [
+                            {"dataLivre":"20/10/2016", "hora": ["8:00", "9:00"]},
+                            {"dataLivre":"21/10/2016", "hora": ["11:00", "12:00"]},
+                            {"dataLivre":"22/10/2016", "hora": ["13:00", "15:00"]}]
+                        }],
+                        "especialidades":[{"cod": "E00001", "nome": specialty}]
+                    }
+                ]
+            })
+
+        return Response({})
