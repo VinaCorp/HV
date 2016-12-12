@@ -1,7 +1,44 @@
-from rest_framework.response import Response
 from rest_framework import viewsets
+from rest_framework import generics
 from rest_framework.response import Response
 from rest_framework.decorators import list_route
+
+from medcal.models import Medico
+from medcal.models import Paciente
+from medcal.models import Localizacao
+from medcal.models import Especialidade
+from medcal.models import Agenda
+
+from medcal.serializers import MedicoSerializer
+from medcal.serializers import PacienteSerializer
+from medcal.serializers import LocalizacaoSerializer
+from medcal.serializers import EspecialidadeSerializer
+from medcal.serializers import AgendaSerializer
+
+
+class MedicoViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Medico.objects.all()
+    serializer_class = MedicoSerializer
+
+
+class PacienteViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Paciente.objects.all()
+    serializer_class = PacienteSerializer
+
+
+class LocalizacaoViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Localizacao.objects.all()
+    serializer_class = LocalizacaoSerializer
+
+
+class EspecialidadeViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Especialidade.objects.all()
+    serializer_class = EspecialidadeSerializer
+
+
+class AgendaViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Agenda.objects.all()
+    serializer_class = AgendaSerializer
 
 
 class MedicViewSet(viewsets.ViewSet):
