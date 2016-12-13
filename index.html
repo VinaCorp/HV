@@ -3,109 +3,47 @@
 <html lang="pt-br">
 <head>
     <meta charset="utf-8">
-    <!-- This file has been downloaded from Bootsnipp.com. Enjoy! -->
     <title>Tela de Pesquisa</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="style.css" type="text/css">
+
 <!--CSS-->
-    <style type="text/css">
-    body {
-    padding-top: 50px;
-    background-color: palegreen;
-}
-.dropdown.dropdown-lg .dropdown-menu {
-    margin-top: -1px;
-    padding: 6px 70px;
-}
-.input-group-btn .btn-group {
-    display: flex !important;
-}
-.btn-group .btn {
-    border-radius: 0;
-    margin-left: -1px;
-}
-.btn-group .btn:last-child {
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
-}
-.btn-group .form-horizontal .btn[type="submit"] {
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-}
-.form-horizontal .form-group {
-    margin-left: 0;
-    margin-right: 0;
-}
-.form-group .form-control:last-child {
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
-}
+    <link rel="stylesheet" type="text/css" href="Style.css">
 
-@media screen and (min-width: 768px) {
-    #adv-search {
-        width: 500px;
-        margin: 0 auto;
-    }
-    .dropdown.dropdown-lg {
-        position: static !important;
-    }
-    .dropdown.dropdown-lg .dropdown-menu {
-        min-width: 500px;
-    }
-}
-
-        .logo-hv{
-            display: block;
-            margin: auto;
-            position: relative;
-            max-width: 400px;
-
-        }
-
-        h1{
-            text-align: center;
-            color: white;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 40px;
-        }
-
-    </style>
-<!--    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script> -->
     <script src="_jquery/jquery-3.1.1.js"></script>
     <script src = "_scripts/main.js" language="javascript" type="text/javascript"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<!-- CSS_ADSBLOCK_START
-<link rel="stylesheet" href="http://adblockers.opera-mini.net/css_block/domainless-unknown.css" type="text/css" />
-<link rel="stylesheet" href="http://adblockers.opera-mini.net/css_block/page_11_2e04bm717vs570pgksh50254hn5j17en68s0n74ahi9dssylen.css" type="text/css" />
- CSS_ADSBLOCK_END -->
+
 </head>
 <body>
 
-
-        <br>
-        <div class="logo-hv">
-            <figure>
-                <img class="img-responsive" alt="" src="logo-hospital-%20white2.png">
-            </figure>
-                <h1>Hospital Virtual</h1>
-            <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
-        </div>
-</div>
+    
 <br>
-<div class="container">
+    <!-- BANNER-->
+  <div class="logo-hv">
+    <figure>
+      <img class="img-responsive" alt="" src="logo-hospital-%20white2.png">
+    </figure>
+      <h1>Hospital Virtual</h1>
+        <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+  </div>
+
+    
+<br>
+    <!-- TELA PESQUISA -->
+<div class="container"> 
 	<div class="row">
 		<div class="col-md-12">
-            <div class="input-group" id="adv-search">
-                <input type="text" class="form-control" placeholder="" />
+            <div class="input-group" id="adv-search"> 
+                <input type="text" class="form-control" placeholder=""/>
                 <div class="input-group-btn">
                     <div class="btn-group" role="group">
                         <div class="dropdown dropdown-lg">
                             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
                             <div class="dropdown-menu dropdown-menu-right" role="menu">
                                 <form class="form-horizontal" role="form">
-
-
+                                    
+                                <!-- NOME DO MÉDICO -->
                                   <div class="form-group">
                                     <label for="filter">Nome do Médico</label>
                                     <select class="form-control" id="form-control-nome" name="form-control-nome">
@@ -116,7 +54,7 @@
                                     </select>
                                   </div>
 
-
+                                <!-- CIDADE -->
                                   <div class="form-group">
                                     <label for="filter">Cidade</label>
                                     <select class="form-control" id="form-control-cidade" name="form-control-cidade">
@@ -127,6 +65,7 @@
                                     </select>
                                   </div>
 
+                                <!-- ESPECIALIDADE -->
                                   <div class="form-group">
                                     <label for="filter">Especialidade</label>
                                     <select class="form-control" id="form-control-especialidade" name="form-control-especialidade">
@@ -137,19 +76,145 @@
                                         <option value="4">Dermatologia</option> -->
                                       </select>
                                   </div>
-                                  <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                                    
+                                    <!-- BOTÃO DE SUBMIT -->
+                                  <button type="submit" class="btn btn-primary">
+                                      <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                                    </button>
                                 </form>
                             </div>
                         </div>
-                        <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                        
+                        <!-- BOTÃO DE PESQUISAR -->
+                        <button type="button" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                        </button>
                     </div>
                 </div>
             </div>
-          </div>
         </div>
-	</div>
+    </div>
 </div>
+    
+    
+<br>
+    <!-- RESULTADOS DA PESQUISA -->
+<div class="col-xs-12 col-sm-offset-3 col-sm-6">
+    <div class="panel panel-default">
+        <div class="panel-heading c-list">
+            <span id="title-resultados" class="title">Resultados</span>
+            <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" rel="stylesheet">
+            
+            <div class="row" style="display: none;">
+                <div class="col-xs-12">
+                    <div class="input-group c-search">
+                        <input type="text" class="form-control" id="contact-list-search">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search text-muted"></span></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+    <ul class="list-group" id="contact-list">
+        <li class="list-group-item">
+            <div class="col-xs-12 col-sm-3">
+                <img src="http://api.randomuser.me/portraits/men/49.jpg" alt="Scott Stevens" class="img-responsive img-circle" />
+            </div>
+                <div class="col-xs-12 col-sm-9">
+                    <span class="name">João da Silva</span><br/>
+                    <span class="glyphicon glyphicon-map-marker text-muted c-info" data-toggle="tooltip" title="5842 Hillcrest Rd"></span>
+                    <span class="visible-xs"> <span class="text-muted">5842 Hillcrest Rd</span><br/></span>
+                    <span class="glyphicon glyphicon-earphone text-muted c-info" data-toggle="tooltip" title="(870) 288-4149"></span>
+                    <span class="visible-xs"> <span class="text-muted">(870) 288-4149</span><br/></span>
+                    <span class="fa fa-comments text-muted c-info" data-toggle="tooltip" title="scott.stevens@example.com"></span>
+                    <span class="visible-xs"> <span class="text-muted">scott.stevens@example.com</span><br/></span>
+                </div>
+                    <div class="clearfix"></div>
+        </li>
+        
+        
+        <li class="list-group-item">
+            <div class="col-xs-12 col-sm-3">
+                <img src="http://api.randomuser.me/portraits/men/97.jpg" alt="Seth Frazier" class="img-responsive img-circle" />
+            </div>
+                <div class="col-xs-12 col-sm-9">
+                    <span class="name">José da Silva</span><br/>
+                    <span class="glyphicon glyphicon-map-marker text-muted c-info" data-toggle="tooltip" title="7396 E North St"></span>
+                    <span class="visible-xs"> <span class="text-muted">7396 E North St</span><br/></span>
+                    <span class="glyphicon glyphicon-earphone text-muted c-info" data-toggle="tooltip" title="(560) 180-4143"></span>
+                    <span class="visible-xs"> <span class="text-muted">(560) 180-4143</span><br/></span>
+                    <span class="fa fa-comments text-muted c-info" data-toggle="tooltip" title="seth.frazier@example.com"></span>
+                    <span class="visible-xs"> <span class="text-muted">seth.frazier@example.com</span><br/></span>
+                </div>
+                    <div class="clearfix"></div>
+        </li>
+        
+        
+        <li class="list-group-item">
+            <div class="col-xs-12 col-sm-3">
+                <img src="http://api.randomuser.me/portraits/women/90.jpg" alt="Jean Myers" class="img-responsive img-circle" />
+            </div>
+                <div class="col-xs-12 col-sm-9">
+                    <span class="name">Maria da Silva</span><br/>
+                    <span class="glyphicon glyphicon-map-marker text-muted c-info" data-toggle="tooltip" title="4949 W Dallas St"></span>
+                    <span class="visible-xs"> <span class="text-muted">4949 W Dallas St</span><br/></span>
+                    <span class="glyphicon glyphicon-earphone text-muted c-info" data-toggle="tooltip" title="(477) 792-2822"></span>
+                    <span class="visible-xs"> <span class="text-muted">(477) 792-2822</span><br/></span>
+                    <span class="fa fa-comments text-muted c-info" data-toggle="tooltip" title="jean.myers@example.com"></span>
+                    <span class="visible-xs"> <span class="text-muted">jean.myers@example.com</span><br/></span>
+                </div>
+                    <div class="clearfix"></div>
+        </li>
+    </ul>
+        </div>
+    </div>
+</div>
+
+    
+    <!-- JS DO RESULTADO DE BUSCA -->
 <script type="text/javascript">
+$(function () {
+    /* BOOTSNIPP FULLSCREEN FIX */
+    if (window.location == window.parent.location) {
+        $('#back-to-bootsnipp').removeClass('hide');
+    }
+    
+    
+    $('[data-toggle="tooltip"]').tooltip();
+    
+    $('#fullscreen').on('click', function(event) {
+        event.preventDefault();
+        window.parent.location = "http://bootsnipp.com/iframe/4l0k2";
+    });
+    $('a[href="#cant-do-all-the-work-for-you"]').on('click', function(event) {
+        event.preventDefault();
+        $('#cant-do-all-the-work-for-you').modal('show');
+    })
+    
+    $('[data-command="toggle-search"]').on('click', function(event) {
+        event.preventDefault();
+        $(this).toggleClass('hide-search');
+        
+        if ($(this).hasClass('hide-search')) {        
+            $('.c-search').closest('.row').slideUp(100);
+        }else{   
+            $('.c-search').closest('.row').slideDown(100);
+        }
+    })
+    
+    $('#contact-list').searchable({
+        searchField: '#contact-list-search',
+        selector: 'li',
+        childSelector: '.col-xs-12',
+        show: function( elem ) {
+            elem.slideDown(100);
+        },
+        hide: function( elem ) {
+            elem.slideUp( 100 );
+        }
+    })
+});
 
 </script>
 </body>
