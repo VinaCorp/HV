@@ -18,6 +18,8 @@ local/
 
 .env
 
+staticfiles
+
 *.sqlite3
 
 !.gitignore
