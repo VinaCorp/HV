@@ -11,23 +11,47 @@ REST API for Virtual Hospital Medic Calendar
 Requirements
 ------------
 
--  Python (2.7, 3.3, 3.4)
--  Django (1.6, 1.7, 1.8)
--  Django REST Framework (2.4, 3.0, 3.1)
+-  Python (3.5)
+-  Django (1.10)
+-  Django REST Framework (3.5)
 
 Installation
 ------------
 
-Install using ``pip``\ …
+Clone this repository from github. Install using ``setup.py``\ …
 
 .. code:: bash
 
-    $ pip install vhospital-api
+    $ python setup.py install
 
-Example
--------
+Deploy
+------
 
-TODO: Write example.
+To deploy using heroku you will need a heroku account and the heroku client.
+
+After that you can follow these steps:
+
+.. code:: bash
+
+    $ heroku login
+    $ heroku create 
+    $ heroku config:add SECRET_KEY=$(./manage.py generate_secret_key)
+    $ heroku config:add ALLOWED_HOSTS='127.0.0.1, .localhost, .herokuapp.com'
+    $ heroku config:add DEBUG=False
+    $ git push heroku master
+    $ heroku run python manage.py migrate
+
+If you want to see some data you can use our sample or prepare yours:
+
+.. code:: bash
+
+    $ heroku pg:psql --app vhospital < sql/pg_initial.sql
+
+If you used mysql you can use:
+
+.. code:: bash
+
+    $ heroku pg:psql --app vhospital < sql/mysql_initial.sql
 
 Testing
 -------
@@ -38,14 +62,15 @@ Install testing requirements.
 
     $ pip install -r requirements.txt
 
-Run with runtests.
+Run with manage.py.
 
 .. code:: bash
 
-    $ ./runtests.py
+    $ ./manage.py test
 
-You can also use the excellent `tox`_ testing tool to run the tests
-against all supported versions of Python and Django. Install tox
+You could also use the excellent `tox`_ testing tool to run the tests
+against all supported versions of Python and Django. But we didn't configured
+the app to use tox yet. After that you would be able to install tox
 globally, and then simply run:
 
 .. code:: bash
