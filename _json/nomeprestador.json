@@ -1,0 +1,15 @@
+{"nomeprestador":[
+            {
+               "cod":"P00001",
+               "nome":"João da Silva"
+            },
+            {
+              "cod":"P00002",
+              "nome":"Maria da Silva"
+            },
+            {
+               "cod":"P00003",
+               "nome":"José da Silva"
+            }
+ 	    ]
+}
