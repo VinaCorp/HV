@@ -1,0 +1,15 @@
+{"cidade":[
+            {
+               "cod":"C00001",
+               "nome":"Curitiba"
+            },
+            {
+              "cod":"C00002",
+              "nome":"São Paulo"
+            },
+            {
+               "cod":"C00003",
+               "nome":"Brasília"
+            }
+ 	    ]
+}

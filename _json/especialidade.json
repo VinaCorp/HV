@@ -1,0 +1,15 @@
+{"especialidade":[
+            {
+               "cod":"E00001",
+               "nome":"Cardiologia"
+            },
+            {
+              "cod":"E00002",
+              "nome":"Pediatria"
+            },
+            {
+               "cod":"E00003",
+               "nome":"Ginecologia"
+            }
+ 	    ]
+}
