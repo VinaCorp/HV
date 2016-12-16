@@ -1,13 +1,9 @@
 from rest_framework.routers import DefaultRouter
 
 from medcal.views import MedicoViewSet
-
 from medcal.views import LocalizacaoViewSet
-
 from medcal.views import EspecialidadeViewSet
-
 from medcal.views import AgendaViewSet
-
 from medcal.views import PacienteViewSet
 
 router = DefaultRouter()

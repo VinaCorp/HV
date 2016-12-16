@@ -12,23 +12,23 @@ from medcal.models import Agenda
 class AgendaViewSetList(APITestCase):
     def setUp(self):
         especialidade = Especialidade.objects.create(
-            nome = "Acupuntura"
+            nome="Acupuntura"
         )
         medico = Medico.objects.create(
-            nome = "Amauri Jose Zuotoski",
-            especialidade = especialidade
+            nome="Amauri Jose Zuotoski",
+            especialidade=especialidade
         )
         paciente = Paciente.objects.create(
-            nome = "Bernaldo Feigundes"
+            nome="Bernaldo Feigundes"
         )
         agenda = Agenda.objects.create(
-            medico = medico,
-            datahora = timezone.datetime(
+            medico=medico,
+            datahora=timezone.datetime(
                 2017, 5, 12, 16, 30, tzinfo=timezone.get_current_timezone()
             ),
-            paciente = paciente
+            paciente=paciente
         )
- 
+
         self.obj = [
             {
                 "id": 1,
@@ -37,11 +37,16 @@ class AgendaViewSetList(APITestCase):
                 "paciente": 1
             }
         ]
-            
-        self.response = self.client.get(r('api:agenda-list'), {'q':'Acupuntura'})
+
+        self.response = self.client.get(r('api:agenda-list'))
 
     def test_get(self):
         self.assertTrue(status.is_success(self.response.status_code))
 
     def test_content(self):
         self.assertEqual(self.response.data, self.obj)
+
+    def test_search(self):
+        response = self.client.get('/apiv0/agenda/', {'search': 'Acupuntura'})
+        self.assertTrue(status.is_success(response.status_code))
+        self.assertEqual(response.data, self.obj)
