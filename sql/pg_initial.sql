@@ -5,3 +5,5 @@ INSERT INTO medcal_medico VALUES (1,'Amauri Jose Zuotoski',1),(2,'Beatriz Maria 
 INSERT INTO medcal_localizacao VALUES (1,'80020905','R MARECHAL DEODORO','51','SALA 805 A B','CENTRO','Curitiba','PR',1),(2,'80520270','R DOM ALBERTO GONCALVES','919','','BOM RETIRO','Curitiba','PR',2),(3,'80020320','R MARECHAL DEODORO','51','SALA 1106 A','CENTRO','Curitiba','PR',3),(4,'80010200','R JOAO NEGRAO','731','23 ANDAR','CENTRO','Curitiba','PR',4),(5,'80045135','R PROFESSOR BRANDAO','50','','ALTO DA XV','Curitiba','PR',5);
 
 INSERT INTO medcal_paciente VALUES (1, 'Bernaldo Feigundes');
+
+INSERT INTO medcal_agenda VALUES (1, '2017-03-12 17:23:00', 1, 1);
