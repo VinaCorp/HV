@@ -1,5 +1,6 @@
 from rest_framework import viewsets
 from rest_framework import filters
+from rest_framework import mixins
 
 from medcal.models import Medico
 from medcal.models import Paciente
@@ -34,7 +35,20 @@ class EspecialidadeViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = EspecialidadeSerializer
 
 
-class AgendaViewSet(viewsets.ReadOnlyModelViewSet):
+class UpdateListRetrieveViewSet(mixins.UpdateModelMixin,
+                                mixins.ListModelMixin,
+                                mixins.RetrieveModelMixin,
+                                viewsets.GenericViewSet):
+    """
+    A viewset that provides `retrieve`, `update`, and `list` actions.
+
+    To use it, override the class and set the `.queryset` and
+    `.serializer_class` attributes.
+    """
+    pass
+
+
+class AgendaViewSet(UpdateListRetrieveViewSet):
     queryset = Agenda.objects.all()
     serializer_class = AgendaSerializer
     filter_backends = (filters.SearchFilter,)
