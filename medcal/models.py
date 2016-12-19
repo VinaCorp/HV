@@ -7,12 +7,18 @@ class Paciente(models.Model):
     # id = models.IntegerField(primary_key=True)
     nome = models.CharField(max_length=45, blank=True, null=True)
 
+    def __str__(self):
+        return self.nome
+
 
 class Especialidade(models.Model):
     # id = models.IntegerField(primary_key=True)
     nome = models.CharField(
         max_length=45, blank=True, null=True
     )
+
+    def __str__(self):
+        return self.nome
 
 
 class Medico(models.Model):
@@ -21,6 +27,9 @@ class Medico(models.Model):
     especialidade = models.ForeignKey(
         Especialidade, models.CASCADE, blank=True, null=True
     )
+
+    def __str__(self):
+        return self.nome
 
 
 class Agenda(models.Model):
@@ -38,6 +47,9 @@ class Agenda(models.Model):
         unique_together = (
             ('id', 'medico', 'datahora'),
         )
+
+    def __str__(self):
+        return '{} - {}'.format(self.medico.nome, self.paciente.nome)
 
 
 class Localizacao(models.Model):
