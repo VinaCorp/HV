@@ -30,7 +30,11 @@ class MedicoViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = MedicoSerializer
     filter_backends = (django_filters.rest_framework.DjangoFilterBackend,)
     filter_class = MedicoFilter
-
+    search_fields = (
+        'nome',
+        'localizacao__cidade',
+        'especialidade__nome'
+    )
 
 class PacienteViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Paciente.objects.all()
