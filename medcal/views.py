@@ -1,3 +1,4 @@
+import django_filters.rest_framework
 from rest_framework import viewsets
 from rest_framework import filters
 from rest_framework import mixins
@@ -15,9 +16,20 @@ from medcal.serializers import EspecialidadeSerializer
 from medcal.serializers import AgendaSerializer
 
 
+class MedicoFilter(django_filters.rest_framework.FilterSet):
+    especialidade = django_filters.NumberFilter(name="especialidade__id")
+    localizacao = django_filters.NumberFilter(name="localizacao__id")
+
+    class Meta:
+        model = Medico
+        fields = ['nome', 'especialidade', 'localizacao']
+
+
 class MedicoViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Medico.objects.all()
     serializer_class = MedicoSerializer
+    filter_backends = (django_filters.rest_framework.DjangoFilterBackend,)
+    filter_class = MedicoFilter
 
 
 class PacienteViewSet(viewsets.ReadOnlyModelViewSet):
