@@ -75,10 +75,22 @@ class UpdateListRetrieveViewSet(mixins.UpdateModelMixin,
     pass
 
 
+class AgendaFilter(django_filters.rest_framework.FilterSet):
+    medico = django_filters.NumberFilter(name="medico__id")
+
+    class Meta:
+        model = Agenda
+        fields = ['medico']
+
+
 class AgendaViewSet(UpdateListRetrieveViewSet):
     queryset = Agenda.objects.all()
     serializer_class = AgendaSerializer
-    filter_backends = (filters.SearchFilter,)
+    filter_backends = (
+        django_filters.rest_framework.DjangoFilterBackend,
+        filters.SearchFilter,
+    )
+    filter_class = AgendaFilter
     search_fields = (
         'medico__nome',
         'medico__localizacao__cidade__nome',
