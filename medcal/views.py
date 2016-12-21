@@ -28,13 +28,17 @@ class MedicoFilter(django_filters.rest_framework.FilterSet):
 class MedicoViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Medico.objects.all()
     serializer_class = MedicoSerializer
-    filter_backends = (django_filters.rest_framework.DjangoFilterBackend,)
+    filter_backends = (
+        django_filters.rest_framework.DjangoFilterBackend,
+        filters.SearchFilter,
+    )
     filter_class = MedicoFilter
     search_fields = (
         'nome',
-        'localizacao__cidade',
+        'localizacao__cidade__nome',
         'especialidade__nome'
     )
+
 
 class PacienteViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Paciente.objects.all()
@@ -70,6 +74,6 @@ class AgendaViewSet(UpdateListRetrieveViewSet):
     filter_backends = (filters.SearchFilter,)
     search_fields = (
         'medico__nome',
-        'medico__localizacao__cidade',
+        'medico__localizacao__cidade__nome',
         'medico__especialidade__nome'
     )

@@ -9,11 +9,11 @@ from medcal.models import Medico
 class MedicoViewSetList(APITestCase):
     def setUp(self):
         especialidade = Especialidade.objects.create(
-            nome = "Acupuntura"
+            nome="Acupuntura"
         )
         medico = Medico.objects.create(
-            nome = "Amauri Jose Zuotoski",
-            especialidade = especialidade
+            nome="Amauri Jose Zuotoski",
+            especialidade=especialidade
         )
 
         self.obj = [
@@ -26,6 +26,11 @@ class MedicoViewSetList(APITestCase):
 
         self.response = self.client.get(r('api:medico-list'))
 
+    def test_search(self):
+        response = self.client.get('/apiv0/medico/', {'search': 'Amauri'})
+        self.assertTrue(status.is_success(response.status_code))
+        self.assertEqual(response.data, self.obj)
+
     def test_get(self):
         self.assertTrue(status.is_success(self.response.status_code))
 
@@ -36,11 +41,11 @@ class MedicoViewSetList(APITestCase):
 class MedicoViewSetRetrieve(APITestCase):
     def setUp(self):
         especialidade = Especialidade.objects.create(
-            nome = "Acupuntura"
+            nome="Acupuntura"
         )
         medico = Medico.objects.create(
-            nome = "Amauri Jose Zuotoski",
-            especialidade = especialidade
+            nome="Amauri Jose Zuotoski",
+            especialidade=especialidade
         )
 
         self.obj = {
