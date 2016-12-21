@@ -4,12 +4,14 @@ from rest_framework import filters
 from rest_framework import mixins
 
 from medcal.models import Medico
+from medcal.models import Cidade
 from medcal.models import Paciente
 from medcal.models import Localizacao
 from medcal.models import Especialidade
 from medcal.models import Agenda
 
 from medcal.serializers import MedicoSerializer
+from medcal.serializers import CidadeSerializer
 from medcal.serializers import PacienteSerializer
 from medcal.serializers import LocalizacaoSerializer
 from medcal.serializers import EspecialidadeSerializer
@@ -28,17 +30,26 @@ class MedicoFilter(django_filters.rest_framework.FilterSet):
 class MedicoViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Medico.objects.all()
     serializer_class = MedicoSerializer
-    filter_backends = (django_filters.rest_framework.DjangoFilterBackend,)
+    filter_backends = (
+        django_filters.rest_framework.DjangoFilterBackend,
+        filters.SearchFilter,
+    )
     filter_class = MedicoFilter
     search_fields = (
         'nome',
-        'localizacao__cidade',
+        'localizacao__cidade__nome',
         'especialidade__nome'
     )
+
 
 class PacienteViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Paciente.objects.all()
     serializer_class = PacienteSerializer
+
+
+class CidadeViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Cidade.objects.all()
+    serializer_class = CidadeSerializer
 
 
 class LocalizacaoViewSet(viewsets.ReadOnlyModelViewSet):
@@ -70,6 +81,6 @@ class AgendaViewSet(UpdateListRetrieveViewSet):
     filter_backends = (filters.SearchFilter,)
     search_fields = (
         'medico__nome',
-        'medico__localizacao__cidade',
+        'medico__localizacao__cidade__nome',
         'medico__especialidade__nome'
     )

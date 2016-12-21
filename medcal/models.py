@@ -5,7 +5,7 @@ from django.db import models
 
 class Paciente(models.Model):
     # id = models.IntegerField(primary_key=True)
-    nome = models.CharField(max_length=45, blank=True, null=True)
+    nome = models.CharField(max_length=100, blank=True, null=True)
 
     def __str__(self):
         return self.nome
@@ -14,7 +14,7 @@ class Paciente(models.Model):
 class Especialidade(models.Model):
     # id = models.IntegerField(primary_key=True)
     nome = models.CharField(
-        max_length=45, blank=True, null=True
+        max_length=100, blank=True, null=True
     )
 
     def __str__(self):
@@ -23,7 +23,7 @@ class Especialidade(models.Model):
 
 class Medico(models.Model):
     # id = models.IntegerField(primary_key=True)
-    nome = models.CharField(max_length=45, blank=True, null=True)
+    nome = models.CharField(max_length=100, blank=True, null=True)
     especialidade = models.ForeignKey(
         Especialidade, models.CASCADE, blank=True, null=True
     )
@@ -52,6 +52,11 @@ class Agenda(models.Model):
         return '{} - {}'.format(self.medico.nome, self.paciente.nome)
 
 
+class Cidade(models.Model):
+    # id = models.IntegerField(primary_key=True)
+    nome = models.CharField(max_length=100)
+
+
 class Localizacao(models.Model):
     # id = models.IntegerField(primary_key=True)
     cep = models.CharField(max_length=9, blank=True, null=True)
@@ -60,15 +65,22 @@ class Localizacao(models.Model):
     compl = models.CharField(
         max_length=45, blank=True, null=True
     )
+
     bairro = models.CharField(
         max_length=45, blank=True, null=True
     )
-    cidade = models.CharField(
-        max_length=45, blank=True, null=True
+
+    cidade = models.ForeignKey(
+        'Cidade',
+        models.CASCADE,
+        blank=True,
+        null=True
     )
+
     estado = models.CharField(
         max_length=2, blank=True, null=True
     )
+
     medico = models.ForeignKey(
         'Medico', models.CASCADE, blank=True, null=True
     )
