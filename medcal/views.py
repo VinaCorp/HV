@@ -4,12 +4,14 @@ from rest_framework import filters
 from rest_framework import mixins
 
 from medcal.models import Medico
+from medcal.models import Cidade
 from medcal.models import Paciente
 from medcal.models import Localizacao
 from medcal.models import Especialidade
 from medcal.models import Agenda
 
 from medcal.serializers import MedicoSerializer
+from medcal.serializers import CidadeSerializer
 from medcal.serializers import PacienteSerializer
 from medcal.serializers import LocalizacaoSerializer
 from medcal.serializers import EspecialidadeSerializer
@@ -43,6 +45,11 @@ class MedicoViewSet(viewsets.ReadOnlyModelViewSet):
 class PacienteViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Paciente.objects.all()
     serializer_class = PacienteSerializer
+
+
+class CidadeViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Cidade.objects.all()
+    serializer_class = CidadeSerializer
 
 
 class LocalizacaoViewSet(viewsets.ReadOnlyModelViewSet):

@@ -5,11 +5,18 @@ from medcal.models import Localizacao
 from medcal.models import Especialidade
 from medcal.models import Medico
 from medcal.models import Agenda
+from medcal.models import Cidade
 
 
 class PacienteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Paciente
+        fields = '__all__'
+
+
+class CidadeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Cidade
         fields = '__all__'
 
 
