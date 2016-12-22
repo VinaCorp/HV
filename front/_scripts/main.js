@@ -28,6 +28,7 @@ $(function() {
 // Consulta Prestadores
 //
   $('#btn-primary-pesquisa').click(function(){
+
     $palavrachaveobj = document.getElementById("form-control-palavrachave");
     $palavrachave = $palavrachaveobj.value;
 
@@ -39,17 +40,22 @@ $(function() {
   $.ajax({
           type: 'GET',
           url: $dataselect,
-          success: function (data) {
 
-//              $('#cand').html(data);
+          success: function (data) {
  console.log(data);
-          $("#resultado-prestadores").load("respesqmed.html");
+
+// 
+
+
+
           mostraresultados(data);
           },
+
           error: function(){
               alert('errorloading Lista Prestador');
           },
-    });
+        })
+    })
 
 //
 // Limpando variaveis
@@ -62,9 +68,12 @@ $(function() {
     $strespecialidade = null;
     $vleespecialidade = null;
 
-//document.getElementById("btn-primary-pesquisa").reset();
-//    $('#btn-primary-pesquisa').reset();
-  });
+
+
+
+
+
+
 //
 //Carga do Nome do Prestador
 //
