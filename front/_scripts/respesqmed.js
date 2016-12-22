@@ -82,6 +82,9 @@
 function mostraresultados(data) {
 console.log(data);
 
+//      $("#resultado-prestadores").load("respesqmed.html");
+
+event.preventDefault();
    $.each(data, function(i, medicos){
     $('#lista-medico').append($('<li>').text(medicos.nome));
 
