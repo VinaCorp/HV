@@ -59,66 +59,59 @@ h1{
     font-size: 40px;
 }
 
-
-
-/* CSS CONTATOS */
-
-@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
-
-body {
-    padding: 30px 0px 60px;
+/* RESULTADOS DA PESQUISA */
+.panel-table .panel-body{
+  padding:5px;
 }
 
-#title-resultados {
-    font-size: 25px;
-    color: black;
-    font-family: 'Yanone Kaffeesatz', sans-serif;
+.panel-table .panel-body .table-bordered{
+  border-style: solid;
+  margin:0px;
 }
-.c-list {
-    padding: 0px;
-    min-height: 44px;
+
+.panel-table .panel-body .table-bordered > thead > tr > th:first-of-type {
+    text-align:center;
+    width: 100px;
 }
+
+.panel-table .panel-body .table-bordered > thead > tr > th:last-of-type,
+.panel-table .panel-body .table-bordered > tbody > tr > td:last-of-type {
+  border-right: 0px;
+}
+
+.panel-table .panel-body .table-bordered > thead > tr > th:first-of-type,
+.panel-table .panel-body .table-bordered > tbody > tr > td:first-of-type {
+  border-left: 0px;
+}
+
+.panel-table .panel-body .table-bordered > tbody > tr:first-of-type > td{
+  border-bottom: 0px;
+}
+
+.panel-table .panel-body .table-bordered > thead > tr:first-of-type > th{
+  border-top: 0px;
+}
+
+.panel-table .panel-footer .pagination{
+  margin:0;
+}
+
+.panel-table .panel-footer .col{
+ line-height: 34px;
+ height: 34px;
+}
+
+.panel-table .panel-heading .col h3{
+ line-height: 30px;
+ height: 30px;
+}
+
 .title {
-    display: inline-block;
-    font-size: 1.7em;
-    font-weight: bold;
-    padding: 5px 15px;
-}
-ul.c-controls {
-    list-style: none;
-    margin: 0px;
-    min-height: 44px;
+ font-size: 25px;
+ color: black;
+ font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 
-ul.c-controls li {
-    margin-top: 8px;
-    float: left;
-}
-
-ul.c-controls li a {
-    font-size: 1.7em;
-    padding: 11px 10px 6px;
-}
-ul.c-controls li a i {
-    min-width: 24px;
-    text-align: center;
-}
-
-ul.c-controls li a:hover {
-    background-color: rgba(51, 51, 51, 0.2);
-}
-
-.c-toggle {
-    font-size: 1.7em;
-}
-
-.name {
-    font-size: 1.7em;
-    font-weight: 700;
-    text-align: center;   
-}
-
-.c-info {
-    padding: 5px 10px;
-    font-size: 1.25em;
+.panel-table .panel-body .table-bordered > tbody > tr > td{
+  line-height: 22px;
 }
