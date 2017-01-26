@@ -60,7 +60,7 @@ h1{
 }
 
 
-/* Resultado Main.js */
+/* RESULTADOS DA PESQUISA */
 .panel-table .panel-body{
   padding:5px;
 }
@@ -107,7 +107,7 @@ h1{
  height: 30px;
 }
 
-#title-resultados {
+.title {
  font-size: 25px;
  color: black;
  font-family: 'Yanone Kaffeesatz', sans-serif;
