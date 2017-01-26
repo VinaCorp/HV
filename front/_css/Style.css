@@ -60,72 +60,6 @@ h1{
 }
 
 
-
-/* CSS CONTATOS
-
-@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
-
-body {
-    padding: 30px 0px 60px;
-}
-
-#title-resultados {
-    font-size: 25px;
-    color: black;
-    font-family: 'Yanone Kaffeesatz', sans-serif;
-}
-.c-list {
-    padding: 0px;
-    min-height: 44px;
-}
-.title {
-    display: inline-block;
-    font-size: 1.7em;
-    font-weight: bold;
-    padding: 5px 15px;
-}
-ul.c-controls {
-    list-style: none;
-    margin: 0px;
-    min-height: 44px;
-}
-
-ul.c-controls li {
-    margin-top: 8px;
-    float: left;
-}
-
-ul.c-controls li a {
-    font-size: 1.7em;
-    padding: 11px 10px 6px;
-}
-ul.c-controls li a i {
-    min-width: 24px;
-    text-align: center;
-}
-
-ul.c-controls li a:hover {
-    background-color: rgba(51, 51, 51, 0.2);
-}
-
-.c-toggle {
-    font-size: 1.7em;
-}
-
-.name {
-    font-size: 1.7em;
-    font-weight: 700;
-    text-align: center;
-}
-
-.c-info {
-    padding: 5px 10px;
-    font-size: 1.25em;
-}
-
-*/
-
-
 /* Resultado Main.js */
 .panel-table .panel-body{
   padding:5px;
@@ -163,10 +97,6 @@ ul.c-controls li a:hover {
   margin:0;
 }
 
-/*
-used to vertically center elements, may need modification if you're not using default sizes.
-*/
-
 .panel-table .panel-footer .col{
  line-height: 34px;
  height: 34px;
@@ -176,11 +106,11 @@ used to vertically center elements, may need modification if you're not using de
  line-height: 30px;
  height: 30px;
 }
+
 #title-resultados {
  font-size: 25px;
  color: black;
  font-family: 'Yanone Kaffeesatz', sans-serif;
-
 }
 
 .panel-table .panel-body .table-bordered > tbody > tr > td{
