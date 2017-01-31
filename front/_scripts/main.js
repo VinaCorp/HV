@@ -24,7 +24,7 @@
   var $botaopesquisa;
 
   var dataMedicos;
-
+  var $dataEspecialidade;
 
   //Monta URL de consulta
 
@@ -127,6 +127,83 @@
   //
         // função mostra Resultados da consulta de medicos
   //
+
+  function limpeza(){
+
+// Limpando variaveis
+//
+    $palavrachave = null;
+    $strnome = null;
+    $vlenome = null;
+    $strcidade = null;
+    $vlecidade = null;
+    $strespecialidade = null;
+    $vleespecialidade = null;
+
+    $("#ContainerResult1").remove();
+};
+
+function makeTableRes(container, dataMedicos ) {
+  limpeza();
+
+
+
+
+  var tableRes = $("<table"+" id="+ '"resultados1"'+ "class="+ '"table table-striped table-bordered table-list"'+"/>");
+
+  if (dataMedicos.length !== 0) {
+
+    var containerResult1 = "<div "+ "class=" + '"container"'+ " id=" + '"ContainerResult1"'+">"+"</div>";
+  // var containerResult1 = "jkhdflhejbfkwejhfkwjeh";
+//  console.log(containerResult1);
+    $('#ContainerResult0').append(containerResult1);
+     var rowRes0 = "<div "+ "class="+'"row"'+ " id="+'"rowRes0"'+">";
+//      console.log(rowRes0);
+      $('#ContainerResult1').append(rowRes0);
+        var colMd10 = "<div " +"class="+'"col-md-10 col-md-offset-1"'+" id="+"'colMd10'"+">";
+//        console.log(colMd10);
+        $('#rowRes0').append(colMd10);
+          var panelDef = "<div " +"class="+'"panel panel-default panel-table"'+" id="+'"panelDef"'+">";
+//          console.log(panelDef);
+          $('#colMd10').append(panelDef);
+            var panelHRes = "<div " +"class="+'"panel-heading"'+" id="+'"panelHRes"'+">";
+//            console.log(panelHRes);
+            $('#panelDef').append(panelHRes);
+              var rowRes1 = "<div "+"class="+'"row"'+" id="+'"rowRes1"'+">";
+//              console.log(rowRes1);
+                $('#panelHRes').append(rowRes1);
+                var divColx6 = "<div "+"class="+'"col col-xs-6"'+" id="+'"divColx6"'+">";
+//                console.log(divColx6);
+                $('#rowRes1').append(divColx6);
+                  var spanResultados = "<span "+"id="+ '"title-resultados"'+" class="+'"title"'+">Resultados</span>";
+//                  console.log(spanResultados);
+                  $('#divColx6').append(spanResultados);
+                  var linkHref = "<link " + "href=" +'"https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz"' +" rel="+'"stylesheet"'+">";
+//                  console.log(linkHref);
+                  $('#divColx6').append(linkHref);
+
+
+  };
+
+  $.each(dataMedicos, function(rowIndex, medicos){
+      var row = $("<tr/>");
+
+      $.each(medicos, function(colIndex, c) {
+      row.append($("<t"+(colIndex == 0 ?  "h" : "d")+"/>").text(c));
+
+          tableRes.append(row);
+//          tableRes.append("<div class="+'"clearfix"'+"></div>");
+      });
+
+  });
+
+
+      return $('#panelHRes').append(tableRes);
+
+
+  };
+
+
         function insereResultados(){
   //
         // captura a palavra chave
@@ -145,17 +222,32 @@
                 type: 'GET',
                 url: $dataselect,
                 success: function (dataMedicos) {
+  //                $("#resultados tr:gt(0)").remove();
+                console.log(dataMedicos);
 
-                  $("#resultados tr:gt(0)").remove();
+// seleciona nome da especialidade
+                $.each(dataMedicos, function(m, med){
+                      console.log(med.especialidade);
+                      $.each($dataEspecialidade, function(k, esp){
+                        console.log(esp.id);
+                        if (med.especialidade == esp.id){
+                          dataMedicos.especialidade = esp.nome;
+                        };
 
-                  var tabres = document.getElementById("resultados")
-                  $.each(dataMedicos, function(i, medicos){
-                    var lin = tabres.insertRow();
-                    var cel = lin.insertCell();
-                    var nmed = medicos.nome;
-                    cel.append(nmed);
-                  console.log(medicos.nome, medicos.id);
-                  });
+                      });
+                      console.log(dataMedicos);
+                });
+
+//                $.each(dataEspecialidade, function(i, nome){
+
+//                  $('#form-control-especialidade')
+//                  .append($("<option></option>")
+//                                    .attr("value",nome.id)
+//                                    .text(nome.nome));
+//                });
+
+
+                var tableMedicos = makeTableRes('#paneltableRes', dataMedicos);
                 },
                 error: function(){
                   alert('errorloading Lista Medicos');
@@ -165,22 +257,6 @@
         };
 
 $(function() {
-
-
-function limpeza(){
-
-  // Limpando variaveis
-  //
-      $palavrachave = null;
-      $strnome = null;
-      $vlenome = null;
-      $strcidade = null;
-      $vlecidade = null;
-      $strespecialidade = null;
-      $vleespecialidade = null;
-
-};
-
 
   //carga inicial dos nomes dos médicos para seleção
 
@@ -297,9 +373,9 @@ function limpeza(){
 
       $.ajax({
         type: 'GET',
-
         url: 'http://vhospital.herokuapp.com/apiv0/especialidade/',
         success: function(dataEspecialidade) {
+          $dataEspecialidade = dataEspecialidade;
           appOptionEspecialidade(dataEspecialidade);
         },
         error: function(){
