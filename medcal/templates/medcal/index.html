@@ -1,0 +1,148 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Tela de Pesquisa</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--CSS-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+
+    <!--JS-->
+    <script src="{% static 'js/jquery/jquery-3.1.1.js' %}"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src = "{% static 'js/scripts/main.js' %}" language="javascript" type="text/javascript"></script>
+</head>
+
+<body>
+<br>
+<br/>
+    <!-- BANNER-->
+  <div class="logo-hv">
+    <figure>
+        <img class="img-responsive" alt="" src="{% static 'images/logo-hospital-white2.png' %}">
+    </figure>
+      <h1>Hospital Virtual</h1>
+        <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+  </div>
+
+<br>
+<br/>
+
+    <!-- TELA PESQUISA -->
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+            <div class="input-group" id="adv-search">
+              <input type="text" class="form-control" id="form-control-palavrachave" name="form-control-palavrachave" placeholder="" />
+                <div class="input-group-btn">
+                    <div class="btn-group" role="group">
+                        <div class="dropdown dropdown-lg">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
+                            <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                <form class="form-horizontal" role="form">
+
+                                <!-- NOME DO MÉDICO -->
+                                  <div class="form-group">
+                                    <label for="filter">Nome do Médico</label>
+                                    <select class="form-control" id="form-control-nome" name="form-control-nome">
+                                    </select>
+                                  </div>
+
+                                <!-- CIDADE -->
+                                  <div class="form-group">
+                                    <label for="filter">Cidade</label>
+                                    <select class="form-control" id="form-control-cidade" name="form-control-cidade">
+                                    </select>
+                                  </div>
+
+                                <!-- ESPECIALIDADE -->
+                                  <div class="form-group">
+                                    <label for="filter">Especialidade</label>
+                                    <select class="form-control" id="form-control-especialidade" name="form-control-especialidade">
+                                      </select>
+                                  </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- BOTÃO DE PESQUISAR -->
+                        <button type="button" class="btn btn-primary" id="btn-primary-pesquisa" name="btn-primary-pesquisa" onclick = "insereResultados();">
+                          <span class="glyphicon glyphicon-search"aria-hidden="true"></span>
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+<br/>
+
+    <!-- RESULTADOS DA PESQUISA  ver main.js-->
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
+
+
+<div id = "ContainerResult0" >
+
+
+</div>
+
+
+<br/>
+  <!--
+<table id="resultados1">
+<div class="col-xs-12 col-sm-offset-3 col-sm-6">
+    <div class="panel panel-default">
+        <div class="panel-heading c-list">
+            <span id="title-resultados" class="title">Resultados</span>
+            <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" rel="stylesheet">
+
+
+            <ul class="list-group" id="contact-list">
+                <li class="list-group-item">
+                    <div class="col-xs-12 col-sm-3">
+                     <img src="http://api.randomuser.me/portraits/men/49.jpg" alt="Scott Stevens" class="img-responsive img-circle" width="50" height="50"/>
+                    </div>
+                        <div class="col-xs-12 col-sm-9">
+                            <span class="name">João da Silva</span><br/>
+                        </div>
+                            <div class="clearfix"></div>
+                  </li>
+
+
+                <li class="list-group-item">
+                    <div class="col-xs-12 col-sm-3">
+                      <img src="http://api.randomuser.me/portraits/men/97.jpg" alt="Seth Frazier" class="img-responsive img-circle" width="50" height="50"/>
+                    </div>
+                        <div class="col-xs-12 col-sm-9">
+                            <span class="name">José da Silva</span><br/>
+                        </div>
+                        <div class="clearfix"></div>
+                </li>
+
+
+                <li class="list-group-item">
+                    <div class="col-xs-12 col-sm-3">
+                     <img src="http://api.randomuser.me/portraits/women/90.jpg" alt="Jean Myers" class="img-responsive img-circle" width="50" height="50"/>
+                    </div>
+                        <div class="col-xs-12 col-sm-9">
+                            <span class="name">Maria da Silva</span><br/>
+                        </div>
+                            <div class="clearfix"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</table>
+-->
+</br>
+</body>
+</html>
