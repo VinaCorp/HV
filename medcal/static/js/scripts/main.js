@@ -31,81 +31,81 @@
     function montaurl() {
 
     if ((!$palavrachave) && (!$vlenome || $vlenome == 0) && (!$vlecidade || $vlecidade == 0) && (!$vleespecialidade || $vleespecialidade == 0)) {
-      $dataselect="http://vhospital.herokuapp.com/apiv0/medico/";
+      $dataselect="/apiv0/medico/";
     console.log($dataselect);
     }
     else {
       if (!$palavrachave && (!$vlenome || $vlenome == 0) && (!$vlecidade || $vlecidade == 0)) {
-        $dataselect="http://vhospital.herokuapp.com/apiv0/medico/?especialidade=" + $vleespecialidade;
+        $dataselect="/apiv0/medico/?especialidade=" + $vleespecialidade;
         console.log($dataselect);
       }
       else {
         if (!$vlenome && (!$vlecidade || $vlecidade == 0) && (!$vleespecialidade || $vleespecialidade == 0)){
-        $dataselect="http://vhospital.herokuapp.com/apiv0/medico/?palavrachave=" +  $palavrachave;
+        $dataselect="/apiv0/medico/?palavrachave=" +  $palavrachave;
         console.log($dataselect);
         }
         else {
           if (!$palavrachave && (!$vlenome || $vlenome == 0) && (!$vleespecialidade || $vleespecialidade == 0)){
-            $dataselect="http://vhospital.herokuapp.com/apiv0/medico/?cidade=" + $vlecidade;
+            $dataselect="/apiv0/medico/?cidade=" + $vlecidade;
             console.log($dataselect);
           }
           else {
             if (!$palavrachave && (!$vlecidade || $vlecidade == 0)  && (!$vleespecialidade || $vleespecialidade == 0)){
-              $dataselect="http://vhospital.herokuapp.com/apiv0/medico/?nome=" + $vlenome;
+              $dataselect="/apiv0/medico/?nome=" + $vlenome;
               console.log($dataselect);
             }
             else{
               if (!$palavrachave && (!$vlenome || $vlenome == 0)) {
-                $dataselect="http://vhospital.herokuapp.com/apiv0/medico/?cidade=" + $vlecidade + "&especialidade=" + $vleespecialidade;
+                $dataselect="/apiv0/medico/?cidade=" + $vlecidade + "&especialidade=" + $vleespecialidade;
                 console.log($dataselect);
               }
               else {
                 if ((!$vlecidade || $vlecidade == 0)  && (!$vleespecialidade || $vleespecialidade == 0)){
-                  $dataselect="http://vhospital.herokuapp.com/apiv0/medico/?palavrachave=" + $palavrachave + "&nome=" + $vlenome;
+                  $dataselect="/apiv0/medico/?palavrachave=" + $palavrachave + "&nome=" + $vlenome;
                   console.log($dataselect);
                 }
                 else {
                   if ((!$vlenome || $vlenome == 0) && (!$vlecidade || $vlecidade == 0) ){
-                    $dataselect="http://vhospital.herokuapp.com/apiv0/medico/?palavrachave=" + $palavrachave  + "&especialidade=" + $vleespecialidade;
+                    $dataselect="/apiv0/medico/?palavrachave=" + $palavrachave  + "&especialidade=" + $vleespecialidade;
                     console.log($dataselect);
                   }
                   else {
                     if ((!$vlenome || $vlenome == 0) && (!$vleespecialidade || $vleespecialidade == 0)){
-                      $dataselect="http://vhospital.herokuapp.com/apiv0/medico/?palavrachave=" + $palavrachave + "&cidade=" +  $vlecidade;
+                      $dataselect="/apiv0/medico/?palavrachave=" + $palavrachave + "&cidade=" +  $vlecidade;
                       console.log($dataselect);
                     }
                     else {
                       if (!$palavrachave && (!$vlecidade || $vlecidade == 0) ){
-                        $dataselect="http://vhospital.herokuapp.com/apiv0/medico/?nome=" + $vlenome + "&especialidade=" +  $vleespecialidade;
+                        $dataselect="/apiv0/medico/?nome=" + $vlenome + "&especialidade=" +  $vleespecialidade;
                         console.log($dataselect);
                       }
                       else {
                         if (!$palavrachave && (!$vleespecialidade || $vleespecialidade == 0)){
-                          $dataselect="http://vhospital.herokuapp.com/apiv0/medico/?nome=" + $vlenome + "&cidade=" +  $vlecidade;
+                          $dataselect="/apiv0/medico/?nome=" + $vlenome + "&cidade=" +  $vlecidade;
                           console.log($dataselect);
                         }
                         else {
                           if (!$palavrachave) {
-                            $dataselect="http://vhospital.herokuapp.com/apiv0/medico/?nome=" + $vlenome + "&cidade=" + $vlecidade + "&especialidade=" + $vleespecialidade;
+                            $dataselect="/apiv0/medico/?nome=" + $vlenome + "&cidade=" + $vlecidade + "&especialidade=" + $vleespecialidade;
                             console.log($dataselect);
                           }
                           else {
                             if ((!$vlenome || $vlenome == 0)){
-                              $dataselect="http://vhospital.herokuapp.com/apiv0/medico/?palavrachave=" + $palavrachave  + "&cidade" + $vlecidade + "&especialidade=" + $vleespecialidade;;
+                              $dataselect="/apiv0/medico/?palavrachave=" + $palavrachave  + "&cidade" + $vlecidade + "&especialidade=" + $vleespecialidade;;
                               console.log($dataselect);
                             }
                             else {
                               if ((!$vlecidade || $vlecidade == 0) ){
-                                $dataselect="http://vhospital.herokuapp.com/apiv0/medico/?palavrachave=" + $palavrachave + "&nome=" + $vlenome + "&especialidade=" + $vleespecialidade;;
+                                $dataselect="/apiv0/medico/?palavrachave=" + $palavrachave + "&nome=" + $vlenome + "&especialidade=" + $vleespecialidade;;
                                 console.log($dataselect);
                               }
                               else {
                                 if ((!$vleespecialidade || $vleespecialidade == 0)){
-                                  $dataselect="http://vhospital.herokuapp.com/apiv0/medico/?palavrachave=" + $palavrachave + "&nome=" + $vlenome + "&cidade=" + $vlecidade;
+                                  $dataselect="/apiv0/medico/?palavrachave=" + $palavrachave + "&nome=" + $vlenome + "&cidade=" + $vlecidade;
                                   console.log($dataselect);
                                 }
                                 else {
-                                  $dataselect="http://vhospital.herokuapp.com/apiv0/medico/?palavrachave=" + $palavrachave + "&nome=" +  $vlenome + "&cidade=" + $vlecidade + "&especialidade=" + $vleespecialidade;
+                                  $dataselect="/apiv0/medico/?palavrachave=" + $palavrachave + "&nome=" +  $vlenome + "&cidade=" + $vlecidade + "&especialidade=" + $vleespecialidade;
                                   console.log($dataselect);
                                   }
                                 }
@@ -298,7 +298,7 @@ $(function() {
 
     $.ajax({
       type: 'GET',
-      url: 'http://vhospital.herokuapp.com/apiv0/medico/',
+      url: '/apiv0/medico/',
   // Chama função para adicionar o nome dos médicos para seleção
       success: function(dataNome){
         appOptionNome(dataNome)
@@ -336,7 +336,7 @@ $(function() {
     $.ajax({
       type: 'GET',
 
-      url: 'http://vhospital.herokuapp.com/apiv0/cidade/',
+      url: '/apiv0/cidade/',
       success: function(dataCidade) {
         appOptionCidade(dataCidade);
       },
@@ -373,7 +373,7 @@ $(function() {
 
       $.ajax({
         type: 'GET',
-        url: 'http://vhospital.herokuapp.com/apiv0/especialidade/',
+        url: '/apiv0/especialidade/',
         success: function(dataEspecialidade) {
           $dataEspecialidade = dataEspecialidade;
           appOptionEspecialidade(dataEspecialidade);
